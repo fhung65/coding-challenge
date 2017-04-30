@@ -52,6 +52,14 @@ void test_2() {
 	c.set(5,6, '@');
 	c.draw();
 	std::cout << '\n';
+
+	c.clean();
+	c.draw();
+	std::cout << '\n';
+
+	c.set(3,7, '$');
+	c.draw();
+	std::cout << '\n';
 }
 
 int main(int argc, char* argv[]) {
