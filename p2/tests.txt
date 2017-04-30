@@ -1,0 +1,2 @@
+example.txt - example from problem
+example2.txt - added a loop
