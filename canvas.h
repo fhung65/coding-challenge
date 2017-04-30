@@ -6,14 +6,15 @@
 
 class Canvas {
   private:
-    vector<Pixel*> Cols;
-    vector<Pixel*> Rows;
+    std::vector<Pixel*> m_Cols;
+    std::vector<Pixel*> m_Rows;
   public:
-    Canvas(int nrows, int ncols);
+    Canvas(unsigned nrows, unsigned ncols, char v);
+        // v is by default '\0'
     Canvas(const char* filename);
-    void add_row(int before);
-    void add_col(int before);
-    void set_char(int row, int col);
+    void add_row(unsigned pos, char v);
+    void add_col(unsigned pos, char v);
+    void set_char(unsigned row, unsigned col);
     void draw();
 };
 

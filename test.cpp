@@ -1,30 +1,48 @@
 #include <iostream>
 #include <stddef.h>
+#include <vector>
 
 #include "pixel.h"
-//#include "canvas.h"
+#include "canvas.h"
 
-void test_1() {
-	Pixel p = Pixel('0');
-	Pixel* c = &p;
-	Pixel* r = &p;
 
-	p.mesh(3,4);
+void test_2() {
+	Canvas c = Canvas(4,5,'\0');
+	c.draw();
+	std::cout << '\n';
+	c.add_row(4, '1');
+	c.draw();
+	std::cout << '\n';
+	c.add_row(0, '2');
+	c.draw();
+	std::cout << '\n';
+	c.add_row(1, '3');
+	c.draw();
+	std::cout << '\n';
+	c.add_row(10, '4');
+	c.draw();
+	std::cout << '\n';
 
-	while (r != NULL) {
-		c = r;
-		while (c != NULL) {
-				std::cout << c->val;
-			c = c->right;
-		}
-		std::cout << '\n';
-		r = r->down;
-	}
+	c.add_col(4, 'a');
+	c.draw();
+	std::cout << '\n';
+
+	c.add_col(6, 'b');
+	c.draw();
+	std::cout << '\n';
+
+	c.add_col(0, 'c');
+	c.draw();
+	std::cout << '\n';
+
+	c.add_row(0, '0');
+	c.draw();
+	std::cout << '\n';
 }
 
 int main(int argc, char* argv[]) {
-	test_1();
 
-	std::cout << "hello world\n";
+	test_2();
+
 	return 0;
 }
